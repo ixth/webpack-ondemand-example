@@ -1,1 +1,3 @@
-export default 'async-b';
+export const name = 'async-b';
+
+console.log(name);

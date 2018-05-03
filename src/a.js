@@ -1,1 +1,3 @@
-export default 'a';
+export const name = 'a';
+
+console.log(name);
