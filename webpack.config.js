@@ -1,8 +1,23 @@
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
 module.exports = {
+    context: path.resolve(__dirname, 'src'),
     devtool: false,
+    entry: './index',
     output: {
-        filename: '[name].[hash].js',
+        filename: '[name].[chunkhash].js',
     },
+    plugins: [
+        new BundleAnalyzerPlugin({
+            reportFilename: 'bundleAnalyzer.html',
+            analyzerMode: 'static',
+            openAnalyzer: false,
+            logLevel: 'warn'
+        }),
+        new HtmlWebpackPlugin(),
+    ],
     module: {
         rules: [
             {
