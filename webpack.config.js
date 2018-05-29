@@ -8,6 +8,7 @@ module.exports = {
     entry: './index',
     output: {
         filename: '[name].[chunkhash].js',
+        hashDigestLength: 6,
     },
     plugins: [
         new BundleAnalyzerPlugin({

@@ -1,6 +1,7 @@
-import './a';
-import './b';
+import letsTryToImportFileAPI from 'fileapi';
 
-const importAsync = (name) => {
-    return import(`./async${name}`);
-};
+console.log(letsTryToImportFileAPI);
+
+import('fileapi').then((fileapi) => {
+    console.log(fileapi);
+});
